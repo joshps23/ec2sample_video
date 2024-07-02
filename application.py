@@ -43,6 +43,7 @@ def generate_frames_web(path_x):
 
 @app.route('/')
 def hello_world():
+  session.clear()
   random_number = random.randint(1, 100)
   current_year = datetime.datetime.now().year
   return render_template("index.html", num=random_number, yr=current_year)
@@ -70,6 +71,13 @@ def video():
     return Response(generate_frames(path_x = session.get('video_path', None)),mimetype='multipart/x-mixed-replace; boundary=frame')
 
 # To display the Output Video on Webcam page
+@app.route("/webcam", methods=['GET','POST'])
+
+def webcam():
+    session.clear()
+    return render_template('ui.html')
+
+
 @app.route('/webapp')
 def webapp():
     #return Response(generate_frames(path_x = session.get('video_path', None),conf_=round(float(session.get('conf_', None))/100,2)),mimetype='multipart/x-mixed-replace; boundary=frame')
