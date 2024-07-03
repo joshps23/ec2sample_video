@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install 'ffmpeg'\
     'libxext6'  -y
 RUN pip install opencv-python==4.10.0.84
 RUN pip install -r requirements.txt
-RUN sudo usermod -a -G video ubuntu
+RUN usermod -a -G video ubuntu
 EXPOSE 5000
 ENV NAME World
 CMD ["python","application.py"]
