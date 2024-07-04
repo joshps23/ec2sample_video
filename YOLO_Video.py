@@ -5,7 +5,7 @@ import math
 def video_detection(path_x):
     video_capture = path_x
     #Create a Webcam Object
-    cap=cv2.VideoCapture(video_capture)
+    cap=cv2.VideoCapture(video_capture,cv2.CAP_V4L)
     frame_width=int(cap.get(3))
     frame_height=int(cap.get(4))
     #out=cv2.VideoWriter('output.avi', cv2.VideoWriter_fourcc('M', 'J', 'P','G'), 10, (frame_width, frame_height))
