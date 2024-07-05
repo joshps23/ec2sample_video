@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 joshps23/ubuntu-opencvgo:latest
+FROM joshps23/ubuntu-amd64:2.1
 COPY . /app
 WORKDIR /app
 RUN apt-get update -y
