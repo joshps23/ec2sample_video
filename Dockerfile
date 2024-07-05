@@ -1,4 +1,4 @@
-FROM ubuntu-opencv:22.04
+FROM joshps23/ubuntu-opencvgo:latest
 COPY . /app
 WORKDIR /app
 RUN apt-get update -y
