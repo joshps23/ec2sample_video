@@ -187,23 +187,24 @@ play.onclick = () => {
     pause.classList.remove('d-none');
     return;
   }
-  // if ('mediaDevices' in navigator && navigator.mediaDevices.getUserMedia) {
-  //   const updatedConstraints = {
-  //     ...constraints,
-  //     deviceId: {
-  //       exact: cameraOptions.value
-  //     }
-  //   };
-  //   startStream(updatedConstraints);
-  // }
-  if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  if ('mediaDevices' in navigator && navigator.mediaDevices.getUserMedia) {
+    const updatedConstraints = {
+      ...constraints,
+      deviceId: {
+        exact: cameraOptions.value
+      }
+    };
+    startStream(updatedConstraints);
+  }
+//   if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
    
 
 
-        navigator.mediaDevices.getUserMedia({ video: {
-    facingMode: 'environment'
-  }
-}).then(function(stream) {
+//         navigator.mediaDevices.getUserMedia({ video: {
+//     facingMode: 'environment'
+//   }
+// })
+.then(function(stream) {
             //video.src = window.URL.createObjectURL(stream);
              video.srcObject = stream;
              video.play();
