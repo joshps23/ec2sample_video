@@ -4,7 +4,7 @@ WORKDIR /app
 RUN apt-get update -y
 RUN apt install pkg-config
 RUN apt install -y python3-pip
-RUN apt-get install v4l-utils ffmpeg
+
 
 RUN apt-get install -y python3-blinker
 
