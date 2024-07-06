@@ -1,20 +1,20 @@
-FROM joshps23/ubuntu-amd64:2.1
+FROM python:3.11.5
 COPY . /app
 WORKDIR /app
 RUN apt-get update -y
 RUN apt install pkg-config
-RUN apt install -y python3-pip
+# RUN apt install -y python3-pip
 
 
-RUN apt-get install -y python3-blinker
+# RUN apt-get install -y python3-blinker
 
 
-# RUN apt install libgl1-mesa-glx -y
-# RUN apt-get update && apt-get install 'ffmpeg'\
-#     'libsm6'\
-#     'libxext6'  -y
+RUN apt install libgl1-mesa-glx -y
+RUN apt-get update && apt-get install 'ffmpeg'\
+    'libsm6'\
+    'libxext6'  -y
 
-# RUN pip install opencv-contrib-python
+
 # RUN apt-get install python3-opencv
 
 
@@ -26,5 +26,5 @@ RUN adduser -u 80 --disabled-password --gecos "" appuser && \
 USER appuser
 EXPOSE 80
 # ENV NAME World
-ENTRYPOINT [ "python3" ]
-CMD ["application.py"]
+# ENTRYPOINT [ "python3" ]
+CMD ["python", "application.py"]
