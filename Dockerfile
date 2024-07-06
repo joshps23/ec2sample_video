@@ -26,4 +26,5 @@ RUN adduser -u 80 --disabled-password --gecos "" appuser && \
 USER appuser
 EXPOSE 5000
 # ENV NAME World
-CMD ["python","application.py"]
+ENTRYPOINT [ "python3" ]
+CMD ["application.py"]
