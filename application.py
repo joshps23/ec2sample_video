@@ -41,14 +41,14 @@ def generate_frames_web(path_x):
         yield (b'--frame\r\n'
                     b'Content-Type: image/jpeg\r\n\r\n' + frame +b'\r\n')
 
-@app.route('/')
-def hello_world():
-  session.clear()
-  random_number = random.randint(1, 100)
-  current_year = datetime.datetime.now().year
-  return render_template("index.html", num=random_number, yr=current_year)
+# @app.route('/')
+# def hello_world():
+#   session.clear()
+#   random_number = random.randint(1, 100)
+#   current_year = datetime.datetime.now().year
+#   return render_template("index.html", num=random_number, yr=current_year)
 
-@app.route('/testcam')
+@app.route('/')
 def hello_world2():
   return render_template("indexvideo.html")
 #     return """
