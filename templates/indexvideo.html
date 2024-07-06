@@ -128,6 +128,8 @@ video {
         </select>
     </div>
 
+    <img src="{{ url_for('webapp') }}"   alt="Upload video">
+
     <img class="screenshot-image d-none" alt="">
 
     <div class="controls">
@@ -148,6 +150,8 @@ const canvas = document.querySelector('canvas');
 const screenshotImage = document.querySelector('img');
 const buttons = [...controls.querySelectorAll('button')];
 let streamStarted = false;
+
+
 
 const [play, pause, screenshot] = buttons;
 
@@ -193,6 +197,9 @@ play.onclick = () => {
   //   startStream(updatedConstraints);
   // }
   if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+   
+
+
         navigator.mediaDevices.getUserMedia({ video: {
     facingMode: 'environment'
   }
@@ -201,6 +208,8 @@ play.onclick = () => {
              video.srcObject = stream;
              video.play();
          });
+
+
      }
   // .then(stream => vid.srcObject = stream)
   // .catch(console.error);
