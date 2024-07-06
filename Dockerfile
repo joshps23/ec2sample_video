@@ -24,7 +24,7 @@ RUN adduser -u 80 --disabled-password --gecos "" appuser && \
     adduser appuser video && \
     chown -R appuser /app
 USER appuser
-EXPOSE 5000
+EXPOSE 80
 # ENV NAME World
 ENTRYPOINT [ "python3" ]
 CMD ["application.py"]
