@@ -119,7 +119,7 @@ video {
 </head>
 <body>
 <div class="display-cover">
-    <video autoplay></video>
+    <video muted autoplay playsinline></video>
     <canvas class="d-none"></canvas>
 
     <div class="video-options">
@@ -204,14 +204,14 @@ play.onclick = () => {
 //     facingMode: 'environment'
 //   }
 // })
-.then(function(stream) {
-            //video.src = window.URL.createObjectURL(stream);
-             video.srcObject = stream;
-             video.play();
-         });
+// .then(function(stream) {
+//             //video.src = window.URL.createObjectURL(stream);
+//              video.srcObject = stream;
+//              video.play();
+//          });
 
 
-     }
+    //  }
   // .then(stream => vid.srcObject = stream)
   // .catch(console.error);
 };
@@ -227,6 +227,8 @@ const handleStream = (stream) => {
   pause.classList.remove('d-none');
   screenshot.classList.remove('d-none');
   streamStarted = true;
+  const tracks = stream.getTracks();
+  
 };
 
 getCameraSelection();
