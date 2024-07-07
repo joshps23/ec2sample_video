@@ -29,17 +29,18 @@ def generate_frames(path_x = ''):
         ref,buffer=cv2.imencode('.jpg',detection_)
 
         frame=buffer.tobytes()
-        yield (b'--frame\r\n'
-                    b'Content-Type: image/jpeg\r\n\r\n' + frame +b'\r\n')
+        yield (b'--frame\\r\\n'
+                    b'Content-Type: image/jpeg\\r\\n\\r\\n' + frame +b'\\r\\n')
 
 def generate_frames_web(path_x):
     yolo_output = video_detection(path_x)
     for detection_ in yolo_output:
+        
         ref,buffer=cv2.imencode('.jpg',detection_)
 
         frame=buffer.tobytes()
-        yield (b'--frame\r\n'
-                    b'Content-Type: image/jpeg\r\n\r\n' + frame +b'\r\n')
+        yield (b'--frame\\r\\n'
+                    b'Content-Type: image/jpeg\\r\\n\\r\\n' + frame +b'\\r\\n')
 
 # @app.route('/')
 # def hello_world():
